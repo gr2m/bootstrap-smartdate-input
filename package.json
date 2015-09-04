@@ -1,0 +1,33 @@
+{
+  "name": "smartdate-input",
+  "description": "A plugin that understands human date/time inputs & their format",
+  "main": "smartdate-input.js",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "standard smartdate-input.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr2m/bootstrap-smartdate-input.git"
+  },
+  "keywords": [
+    "date",
+    "parse",
+    "momentjs",
+    "bootstrap",
+    "input"
+  ],
+  "author": "Gregor Martynus <gregor@martynus.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gr2m/bootstrap-smartdate-input/issues"
+  },
+  "homepage": "http://gr2m.github.io/bootstrap-smartdate-input/",
+  "dependencies": {
+    "moment-parseformat": "0.0.13"
+  },
+  "devDependencies": {
+    "bootstrap-editable-table": "https://github.com/gr2m/bootstrap-editable-table#gh-pages",
+    "standard": "^3.11.1"
+  }
+}
