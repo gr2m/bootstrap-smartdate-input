@@ -22,7 +22,7 @@ describe("using promises and chai-as-promised", function() {
   })
  
   beforeEach(function() {
-    return browser.get("http://gr2m.github.io/smartdate-input/")
+    return browser.get("http://localhost:8000/index.html")
   })
  
   after(function() {
@@ -34,8 +34,9 @@ describe("using promises and chai-as-promised", function() {
   })
 
   it("input element was found", function() {
-    var $input = browser.elementByClassNameOrNull('input-lg')
-
-    return $input.smartDate('set')
+    browser.eval("$('.input-lg').smartDate('set', new Date())")
+      .done(function(obj){
+        console.log(obj)
+      })
+    })
   })
-})

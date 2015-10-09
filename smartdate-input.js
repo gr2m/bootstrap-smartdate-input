@@ -1,7 +1,4 @@
 /* global moment */
-
-var jQuery = require('jquery')
-
 (function ($, moment) {
   'use strict'
 
