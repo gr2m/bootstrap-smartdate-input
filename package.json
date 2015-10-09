@@ -1,0 +1,50 @@
+{
+  "name": "smartdate-input",
+  "description": "A plugin that understands human date/time inputs & their format",
+  "main": "smartdate-input.js",
+  "version": "0.1.0",
+  "scripts": {
+    "coverage": "istanbul cover test/smartdate-input.js && istanbul-coveralls",
+    "install_selenium_and_chromedriver": "install_chromedriver && install_selenium",
+    "kill_selenium": "kill_selenium",
+    "start_selenium_with_chromedriver": "start_selenium_with_chromedriver",
+    "test": "standard && test/smartdate-input.js",
+    "test:mocha": "mocha test/smartdate-input.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr2m/smartdate-input.git"
+  },
+  "keywords": [
+    "date",
+    "parse",
+    "momentjs",
+    "bootstrap",
+    "input"
+  ],
+  "author": "Gregor Martynus <gregor@martynus.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gr2m/smartdate-input/issues"
+  },
+  "homepage": "http://gr2m.github.io/smartdate-input/",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "moment-parseformat": "^0.0.13",
+    "moment": "^2.10.6"
+  },
+  "devDependencies": {
+    "bootstrap-editable-table": "https://github.com/gr2m/bootstrap-editable-table#gh-pages",
+    "gh-pages-deploy": "^0.3.0",
+    "istanbul": "^0.3.5",
+    "istanbul-coveralls": "^1.0.1",
+    "semantic-release": "^4.3.4",
+    "standard": "^3.11.1",
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
+    "mocha": "^2.3.3",
+    "sauce-connect-launcher": "^0.12.0",
+    "sv-selenium": "^0.2.6",
+    "wd": "^0.3.12"
+  }
+}
