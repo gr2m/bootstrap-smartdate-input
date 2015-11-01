@@ -1,25 +1,13 @@
-/* global describe, before, after, it*/
-var webdriverio = require('webdriverio')
+/* global describe, after, it*/
 var chai = require('chai')
-var chaiAsPromised = require('chai-as-promised')
-
 var assert = chai.assert
-chai.use(chaiAsPromised)
-chai.Should()
 
 describe('=== smartDate-input ===', function () {
-
   this.timeout(90000)
-  var client = {}
-
-  before(function (done) {
-    client = webdriverio.remote({ desiredCapabilities: {browserName: 'chrome'} })
-    client.init(done)
-  })
 
   it('smartDate, init', function (done) {
-    client
-      .url('file://' + __dirname + '/../index.html')
+    this.client
+      .url('/index.html')
       .execute("$('.input-lg').smartDate()")
       .catch(function (err) {
         console.log('🚨 🚨 🚨 🚨 🚨 🚨 ')
@@ -29,8 +17,8 @@ describe('=== smartDate-input ===', function () {
   })
 
   it('smartDate, set Date', function (done) {
-    client
-      .url('file://' + __dirname + '/../index.html')
+    this.client
+      .url('/index.html')
       .execute("$('.input-lg').smartDate('set', 'Tuesday, October 13, 2015 6:07pm')")
       .catch(function (err) {
         console.log('🚨 🚨 🚨 🚨 🚨 🚨 ')
@@ -44,8 +32,8 @@ describe('=== smartDate-input ===', function () {
   })
 
   it('smartDate, setFormat', function (done) {
-    client
-      .url('file://' + __dirname + '/../index.html')
+    this.client
+      .url('/index.html')
       .execute("$('.input-lg').smartDate('set', 'Tuesday, October 13, 2015 6:07pm')")
       .catch(function (err) {
         console.log('🚨 🚨 🚨 🚨 🚨 🚨 ')
@@ -63,9 +51,9 @@ describe('=== smartDate-input ===', function () {
       .call(done)
   })
 
-  it('smartDate, options', function (done) {
-    client
-      .url('file://' + __dirname + '/../index.html')
+  it.skip('smartDate, options (https://github.com/gr2m/smartdate-input/pull/8)', function (done) {
+    this.client
+      .url('/index.html')
       .execute("$('.input-lg').smartDate({date: 'Fri Oct 16 2015 13:03:37 GMT+0200 (CEST)', format: 'DD MM YY'})")
       .catch(function (err) {
         console.log('🚨 🚨 🚨 🚨 🚨 🚨 ')
@@ -79,6 +67,6 @@ describe('=== smartDate-input ===', function () {
   })
 
   after(function (done) {
-    client.end(done)
+    this.client.end(done)
   })
 })
