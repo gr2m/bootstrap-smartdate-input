@@ -68,10 +68,57 @@ Or the event when it shall check for & trigger `change:format`
 <input data-smartdate-spy data-format-event="input">
 ```
 
+## Setup
+
+```bash
+git clone git@github.com:gr2m/smartdate-input.git
+cd smartdate-input
+npm install
+```
+
+## Test
+
+```bash
+npm test
+```
+
+While working on the tests, you can start Selenium / Chrome driver
+once, and then tests re-run on each save
+
+```bash
+npm run start_selenium_with_chromedriver
+npm run test:mocha:watch
+```
+
+### Test configuration
+
+Set log level (`silly`, `verbose`, `info`, `warn`, `error`). Defaults to `error`
+
+```bash
+LOG_LEVEL=verbose npm test
+```
+
+
+Running tests in a different browser. Defaults to `selenium:chrome`
+
+```bash
+TEST_CLIENT=selenium:firefox npm test
+```
+
+Running tests on Sauce Labs
+
+```bash
+# a couple of examples
+SAUCE_USERNAME=username SAUCE_ACCESS_KEY=accesskey TEST_CLIENT=saucelabs:chrome npm test
+SAUCE_USERNAME=username SAUCE_ACCESS_KEY=accesskey TEST_CLIENT='saucelabs:internet explorer' npm test
+SAUCE_USERNAME=username SAUCE_ACCESS_KEY=accesskey TEST_CLIENT='saucelabs:internet explorer:10.0:Windows 8' npm test
+```
+
 Fine Print
 ----------
 
-The smartDate Input Plugin have been authored by [Gregor Martynus](https://github.com/gr2m),
+The smartDate Input Plugin have been authored by
+[Gregor Martynus](https://github.com/gr2m) ([@gr2m](https://twitter.com/gr2m)),
 proud member of the [Hoodie Community](http://hood.ie/).
 
 License: MIT
