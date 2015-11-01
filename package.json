@@ -2,9 +2,18 @@
   "name": "smartdate-input",
   "description": "A plugin that understands human date/time inputs & their format",
   "main": "smartdate-input.js",
-  "version": "0.1.0",
   "scripts": {
-    "test": "standard smartdate-input.js"
+    "coverage": "istanbul cover test/smartdate-input.js && istanbul-coveralls",
+    "install_selenium_and_chromedriver": "install_chromedriver && install_selenium",
+    "kill_selenium": "kill_selenium",
+    "start": "static",
+    "start_selenium": "start_selenium",
+    "start_selenium_with_chromedriver": "start_selenium_with_chromedriver",
+    "pretest": "standard",
+    "test": "./bin/test-background",
+    "test:mocha": "mocha test/test-*.js",
+    "test:mocha:watch": "mocha test/test-*.js --watch --reporter min",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -14,7 +23,7 @@
     "date",
     "parse",
     "momentjs",
-    "bootstrap",
+    "jquery",
     "input"
   ],
   "author": "Gregor Martynus <gregor@martynus.net>",
@@ -29,11 +38,20 @@
     "moment": "^2.10.6"
   },
   "devDependencies": {
-    "bootstrap-editable-table": "https://github.com/gr2m/bootstrap-editable-table#gh-pages",
+    "chai": "^3.3.0",
+    "chai-as-promised": "^5.1.0",
+    "chalk": "^1.1.1",
     "gh-pages-deploy": "^0.3.0",
     "istanbul": "^0.3.5",
     "istanbul-coveralls": "^1.0.1",
-    "semantic-release": "^4.3.4",
-    "standard": "^3.11.1"
+    "mocha": "^2.3.3",
+    "node-static": "^0.7.7",
+    "npmlog": "^1.2.1",
+    "request": "^2.65.0",
+    "sauce-connect-launcher": "^0.12.0",
+    "semantic-release": "^6.0.3",
+    "standard": "^3.11.1",
+    "sv-selenium": "^0.2.6",
+    "webdriverio": "^3.2.6"
   }
 }

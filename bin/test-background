@@ -1,0 +1,44 @@
+#!/bin/bash
+
+set -e
+
+function cleanup {
+  set +e
+
+  npm run kill_selenium
+
+  # kill chrome driver
+  CHROMEDRIVER_PID=`ps -ef | grep chromedriver | grep -v grep | awk '{print $2}'`
+  if [ "$CHROMEDRIVER_PID" ] ; then
+    kill -9 $CHROMEDRIVER_PID
+    echo "Killed chromedriver ($CHROMEDRIVER_PID)"
+  fi
+
+  # kill static server
+  SERVER_PID=`ps -ef | grep 'smartdate-input/node_modules/.bin/static' | grep -v grep | awk '{print $2}'`
+  if [ "$SERVER_PID" ] ; then
+    kill -9 $SERVER_PID
+    echo "Killed static ($SERVER_PID)"
+  fi
+}
+
+# always kill selenium, no matter if tests pass or exit
+trap cleanup EXIT
+
+if [ ! -d "/tmp/sv-selenium" ]; then
+  echo 'Selenium not yet installed, downloading & installing ...'
+  npm run install_selenium_and_chromedriver
+fi
+
+# show logs in Travis, pipe to log files locally
+if [ $CI ] ; then
+  # Travis does not support Chrome, so we only start Selenium
+  npm run start_selenium &
+  npm start -- -a 0.0.0.0 &
+else
+  mkdir -p log
+  npm run start_selenium_with_chromedriver &>./log/selenium.log &
+  npm start -- -a 0.0.0.0 &>./log/server.log &
+fi
+
+TEST_URL=http://0.0.0.0:8080 npm run test:mocha
