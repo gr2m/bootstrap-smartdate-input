@@ -117,7 +117,7 @@
     //
     //
     //
-    function handleFormatChangeEvent (/*event*/) {
+    function handleFormatChangeEvent (/* event */) {
       var dateString = $input.val()
       var newFormat = parseFormat(dateString)
       var newTimestamp
