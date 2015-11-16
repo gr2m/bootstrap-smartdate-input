@@ -56,7 +56,7 @@
     "rimraf": "^2.4.3",
     "semantic-release": "^6.0.3",
     "standard": "^5.3.1",
-    "uglify-js": "^2.6.0"
+    "uglify-js": "^2.6.1"
   },
   "gh-pages-deploy": {
     "staticpath": "demo",
