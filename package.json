@@ -40,7 +40,7 @@
   "homepage": "http://gr2m.github.io/smartdate-input/",
   "dependencies": {
     "@gr2m/frontend-test-setup": "git+https://github.com/gr2m/frontend-test-setup.git",
-    "jquery": "^2.1.4",
+    "jquery": "^2.2.0",
     "moment": "^2.10.6",
     "moment-parseformat": "^2.0.0"
   },
