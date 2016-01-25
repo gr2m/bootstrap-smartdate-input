@@ -42,7 +42,7 @@
     "@gr2m/frontend-test-setup": "git+https://github.com/gr2m/frontend-test-setup.git",
     "jquery": "^2.1.4",
     "moment": "^2.10.6",
-    "moment-parseformat": "^2.0.0"
+    "moment-parseformat": "^2.0.1"
   },
   "devDependencies": {
     "browserify": "^12.0.1",
