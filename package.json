@@ -41,7 +41,7 @@
   "dependencies": {
     "@gr2m/frontend-test-setup": "git+https://github.com/gr2m/frontend-test-setup.git",
     "jquery": "^2.1.4",
-    "moment": "^2.10.6",
+    "moment": "^2.11.2",
     "moment-parseformat": "^2.0.0"
   },
   "devDependencies": {
