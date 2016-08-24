@@ -1,4 +1,4 @@
-/* global describe, it*/
+/* global describe, it */
 
 var chai = require('chai')
 var assert = chai.assert
